@@ -18,10 +18,3 @@ def is_tts_symbol_limit(message):
         return False, msg
 
     return len(message.text), 'Ваш запрос соответствует количеству символов'
-
-
-# def is_digit(message):
-#     if message.isdigit():
-#         return True
-#     else:
-#         return False
