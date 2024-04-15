@@ -15,9 +15,9 @@ config['TTS'] = {
     }
 
 config['LIMITS'] = {
-    'MAX_USER_TTS_SYMBOLS': '200',
+    'MAX_USER_TTS_SYMBOLS': '5',
     'MAX_USERS': '1',
-    'MAX_TTS_SYMBOLS': '1000',
+    'MAX_TTS_SYMBOLS': '10',
     }
 
 bot_token = ('7067069927:AAHOp05z2tcqb5OQwvjwIu7y1QgLqhRgcSI')

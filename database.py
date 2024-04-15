@@ -68,3 +68,21 @@ def insert_data(user_id=None, text=None, tts_symbols=0):
         logging.error(f'Error database:', error)
     finally:
         con.close()
+
+
+def count_all_symbol(user_id):
+    try:
+        with sqlite3.connect("speech_kit.db") as con:
+            cursor = con.cursor()
+            cursor.execute('''SELECT SUM(tts_symbols) FROM messages WHERE user_id=?''', (user_id,))
+            data = cursor.fetchone()
+            if data and data[0]:
+                logging.info('symbols have been counted')
+                return data[0]
+            else:
+                logging.info('symbols column is empty')
+                return 0
+    except sqlite3.Error as error:
+        logging.error(f'Error database:', error)
+    finally:
+        con.close()
